@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+void show0(void);
+void show1(void);
+void show2(void);
+
+int main(void)
+{
+    void (*pM[3])(void);
+    int num;
+
+    pM[0] = show0;
+    pM[1] = show1;
+    pM[2] = show2;
+
+    printf("which viecle would you call ?(0:CAR 1:Formura1 2:AirPlane)\n");
+    scanf("%d",&num);
+
+    if(0<= num && num <= 2)
+      (*pM[num])();
+
+    return 0;
+}
+
+void show0(void)
+{
+     printf("Car is selected.\n");
+}
+
+void show1(void)
+{
+     printf("Fomura1 is selected.\n");
+}
+
+void show2(void)
+{
+     printf("AirPlane is selected.\n");
+}
